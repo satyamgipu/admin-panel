@@ -1,0 +1,40 @@
+<div class="card mb3">
+    <div class="car header">
+<i class="fas fa-table"></i>
+All Countries
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width =100% collspacing="0">
+                <thead>
+                    <tr>
+                        <th>Country name</th>
+                        <th> Country Details</th>
+                        <th>actions</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Country Name</th>
+                        <th>Country Details</th>
+
+                        <th>Actions</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+
+                     <% for(var topic of topics) {%>
+                    <tr>
+                        <td> <%=topic.Country %></td>
+                        <td> <%=topic.RegistrationDate %></td>
+                        <td>
+                            <a href="/topics/edit/<%=topic.id %>" class="btn btn-outline-primary btn-sm">Edit</a>
+                            <a href="/topics/delete/<%=topic.id %>" class="btn btn-outline-danger btn-sm" onclick="checkDelete()">Delete</a>
+                        </td>
+                    </tr>
+<%}%>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
